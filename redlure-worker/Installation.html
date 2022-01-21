@@ -150,14 +150,21 @@
             
         </li>
     
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    Components
+            
+                </span>
+            
 
+            
+            <ul class="articles">
+                
     
-        
-        <li class="header">Components</li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../redlure-console/domains_servers.html">
+        <li class="chapter " data-level="2.3.1" data-path="../redlure-console/domains_servers.html">
             
                 <a href="../redlure-console/domains_servers.html">
             
@@ -170,7 +177,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../redlure-console/users_roles.html">
+        <li class="chapter " data-level="2.3.2" data-path="../redlure-console/users_roles.html">
             
                 <a href="../redlure-console/users_roles.html">
             
@@ -183,7 +190,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../redlure-console/workspaces.html">
+        <li class="chapter " data-level="2.3.3" data-path="../redlure-console/workspaces.html">
             
                 <a href="../redlure-console/workspaces.html">
             
@@ -196,7 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="../redlure-console/results.html">
+        <li class="chapter " data-level="2.3.4" data-path="../redlure-console/results.html">
             
                 <a href="../redlure-console/results.html">
             
@@ -209,7 +216,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="../redlure-console/campaigns.html">
+        <li class="chapter " data-level="2.3.5" data-path="../redlure-console/campaigns.html">
             
                 <a href="../redlure-console/campaigns.html">
             
@@ -222,7 +229,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.6" data-path="../redlure-console/emails.html">
+        <li class="chapter " data-level="2.3.6" data-path="../redlure-console/emails.html">
             
                 <a href="../redlure-console/emails.html">
             
@@ -235,7 +242,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.7" data-path="../redlure-console/pages.html">
+        <li class="chapter " data-level="2.3.7" data-path="../redlure-console/pages.html">
             
                 <a href="../redlure-console/pages.html">
             
@@ -248,7 +255,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.8" data-path="../redlure-console/target_lists.html">
+        <li class="chapter " data-level="2.3.8" data-path="../redlure-console/target_lists.html">
             
                 <a href="../redlure-console/target_lists.html">
             
@@ -261,7 +268,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.9" data-path="../redlure-console/profiles.html">
+        <li class="chapter " data-level="2.3.9" data-path="../redlure-console/profiles.html">
             
                 <a href="../redlure-console/profiles.html">
             
@@ -275,13 +282,18 @@
         </li>
     
 
+            </ul>
+            
+        </li>
+    
+
     
         
         <li class="header">redlure-client</li>
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../redlure-client/Installation.html">
+        <li class="chapter " data-level="3.1" data-path="../redlure-client/Installation.html">
             
                 <a href="../redlure-client/Installation.html">
             
@@ -301,7 +313,7 @@
         
         
     
-        <li class="chapter active" data-level="5.1" data-path="Installation.html">
+        <li class="chapter active" data-level="4.1" data-path="Installation.html">
             
                 <a href="Installation.html">
             
@@ -314,7 +326,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="firewall.html">
+        <li class="chapter " data-level="4.2" data-path="firewall.html">
             
                 <a href="firewall.html">
             
@@ -327,7 +339,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="phishing_logs.html">
+        <li class="chapter " data-level="4.3" data-path="phishing_logs.html">
             
                 <a href="phishing_logs.html">
             
@@ -386,6 +398,27 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="installing-the-redlure-worker">Installing the redlure-worker</h1>
+<p>Workers require root privileges to run. To install a worker on your system run the following commands:</p>
+<pre><code class="lang-shell">git clone https://github.com/redlure/redlure-worker.git
+cd redlure-worker
+sudo ./install.sh
+sudo pipenv run ./redlure-worker.py
+</code></pre>
+<p>The worker currently utlilzes Python3.8.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Before you boot the worker up, you&apos;ll need to add some values to <code>config.py</code> so that the worker can communicate with your console. The two you&apos;ll need to add values for are:</p>
+<ul>
+<li><code>API_KEY</code> - set to the value generated by the redlure-console in the web interface (<em>Domains &amp; Servers</em> page)</li>
+<li><code>SERVER_IP</code> - set to the IP address or domain name where your redlure-console is hosted</li>
+</ul>
+<p>The other config values are default, and may not require editing:</p>
+<ul>
+<li><code>CERT_PATH</code> and <code>KEY_PATH</code> - can be set to custom SSL certificates. Self-signed certs will be generated on startup otherwise.</li>
+<li><code>WORKER_PORT</code> - set the port the worker will use on startup</li>
+<li><code>SERVER_PORT</code> - set to the port your redlure-console is listening on</li>
+</ul>
+<h2 id="hardware-and-os">Hardware and OS</h2>
+<p>I typically deploy these on Ubuntu LTS or Debian images from Digital Ocean or Vultr. Minimum specs offered by the providers are fine in my experience. Usually this is around 1 GB Memory/1 CPU and 25 GB disk space. Never had an issue with those builds. These are dirt cheap to host, costing roughly $5 per month depending on your cloud provider.</p>
 
                                 
                                 </section>
@@ -429,7 +462,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Installation","level":"5.1","depth":1,"next":{"title":"Recommended Firewall Setup","level":"5.2","depth":1,"path":"redlure-worker/firewall.md","ref":"redlure-worker/firewall.md","articles":[]},"previous":{"title":"Installation","level":"4.1","depth":1,"path":"redlure-client/Installation.md","ref":"redlure-client/Installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-worker/Installation.md","mtime":"2022-01-21T16:31:41.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-21T19:38:18.446Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Installation","level":"4.1","depth":1,"next":{"title":"Recommended Firewall Setup","level":"4.2","depth":1,"path":"redlure-worker/firewall.md","ref":"redlure-worker/firewall.md","articles":[]},"previous":{"title":"Installation","level":"3.1","depth":1,"path":"redlure-client/Installation.md","ref":"redlure-client/Installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-worker/Installation.md","mtime":"2022-01-21T20:48:25.040Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-21T21:04:47.140Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
