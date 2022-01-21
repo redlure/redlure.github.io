@@ -5,15 +5,25 @@
 * [Initial Install](Initial Install.md)
 
 ### redlure-console
-* [redlure-console](redlure-console/README.md)
-    * [Installation](redlure-console/Installation.md)
+* [Installation](redlure-console/Installation.md)
+* [Recommended Firewall Setup](redlure-console/firewall.md)
+
+### Components
+* [Domains & Servers](redlure-console/domains_servers.md)
+* [Users & Roles](redlure-console/users_roles.md)
+* [Workspaces](redlure-console/workspaces.md)
+* [Results](redlure-console/results.md)
+* [Campaigns](redlure-console/campaigns.md)
+* [Emails](redlure-console/emails.md)
+* [Pages](redlure-console/pages.md)
+* [Target Lists](redlure-console/target_lists.md)
+* [Profiles](redlure-console/profiles.md)
 
 ### redlure-client
-* [redlure-client](redlure-client/README.md)
-    * [Installation](redlure-client/Installation.md)
+* [Installation](redlure-client/Installation.md)
 
 ### redlure-worker
-* [redlure-worker](redlure-worker/README.md)
-    * [Installation](redlure-worker/Installation.md)
-
+* [Installation](redlure-worker/Installation.md)
+* [Recommended Firewall Setup](redlure-worker/firewall.md)
+* [Phishing Logs](redlure-worker/phishing_logs.md)
 
