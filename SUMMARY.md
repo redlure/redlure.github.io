@@ -22,6 +22,7 @@
 * [Installation](redlure-client/Installation.md)
 
 ### redlure-worker
+* [About](redlure-worker/About.md)
 * [Installation](redlure-worker/Installation.md)
 * [Recommended Firewall Setup](redlure-worker/firewall.md)
 * [Phishing Logs](redlure-worker/phishing_logs.md)
