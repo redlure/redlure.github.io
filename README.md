@@ -20,6 +20,6 @@ redlure is comprised of three components:
 2. __redlure-worker__ - Skeletal Python API that manages the web server for hosting phishing campaigns. These are designed to be burnable and scalable. This is the only component that phishing targets interact with. Multiple redlure-workers can and should be managed from a single console.
 3. __redlure-client__ - Web interface for interacting with the console API. Written with the Angular 10 framework (Typescript and HTML).
 
-Below is an example of a fully setup redlure environment. Typically, I'd setup 3 cloud servers for the infrastructure seen below: one server to host both the console and client and two servers for the redlure-workers (one per worker)
+Below is an example of a fully setup redlure environment. Typically, I'd setup 3 cloud servers for the infrastructure seen below: one server to host both the console and client and two servers for the redlure-workers (one per worker).
 
 ![](gitbook/images/diagram-v2.png)

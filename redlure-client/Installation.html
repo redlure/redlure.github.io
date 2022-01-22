@@ -456,6 +456,35 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="installing-the-redlure-client">Installing the redlure-client</h1>
+<p>The Redlure client is built with Angular10 and requires node package manager to install. To install the client use the following commands:</p>
+<pre><code class="lang-shell">git clone https://github.com/redlure/redlure-client.git
+sudo apt-get install npm
+sudo npm i -g @angular/cli
+cd redlure-client &amp;&amp; npm install
+</code></pre>
+<p>The most painful part of setting up the client is getting the right version of Node installed. If starting the client gives you an error about the minimum required Node version, the most pain-free way I&apos;ve found to fix this is using <a href="https://github.com/nvm-sh/nvm" target="_blank">Node Version Manager</a>.</p>
+<pre><code class="lang-shell">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+nvm install &lt;required version&gt;
+</code></pre>
+<p>The client interface can be started with:</p>
+<pre><code class="lang-shell">./redlure-client.py
+</code></pre>
+<p>By default, this will start the client on port 4200.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Make changes to <code>config.py</code></p>
+<ul>
+<li>SSL - Toggle the use of SSL</li>
+<li>CERT_PATH - set path of custom SSL cert </li>
+<li>KEY_PATH - set path of custom SSL key</li>
+<li>HOST - Interface that the client will be served on</li>
+<li>PORT - Port the client will be served on</li>
+</ul>
+<p>If CERT_PATH and KEY_PATH are left with their default values, self-signed certs will be generated and used</p>
+<h2 id="default-login">Default Login</h2>
+<p>Once you have setup a console and client, you can log into redlure with the username <code>admin</code> and the password <code>redlure</code>.</p>
+<h2 id="hardware-and-os">Hardware and OS</h2>
+<p>I typically deploy the client and console on the same host. Usually running Ubuntu LTS or Debian images from Digital Ocean or Vultr. The minimum memory I&apos;d run this server with is 2 GB. Usually the specs are around 2 GB Memory/1 CPU and 50-65 GB disk space. Usually my console/client server costs roughly $10-15 per month depending on the cloud provider.</p>
+<p><strong>If you run the console/client with less than 2GB memory, you are almost guaranteed to experience <a href="https://github.com/redlure/redlure-console/issues/10" target="_blank">issues</a>.</strong> </p>
 
                                 
                                 </section>
@@ -499,7 +528,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Installation","level":"3.2","depth":1,"next":{"title":"About","level":"4.1","depth":1,"path":"redlure-worker/About.md","ref":"redlure-worker/About.md","articles":[]},"previous":{"title":"About","level":"3.1","depth":1,"path":"redlure-console/About.md","ref":"redlure-console/About.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-client/Installation.md","mtime":"2022-01-21T16:31:08.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T17:55:19.243Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Installation","level":"3.2","depth":1,"next":{"title":"About","level":"4.1","depth":1,"path":"redlure-worker/About.md","ref":"redlure-worker/About.md","articles":[]},"previous":{"title":"About","level":"3.1","depth":1,"path":"redlure-console/About.md","ref":"redlure-console/About.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-client/Installation.md","mtime":"2022-01-22T18:18:39.715Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T18:19:01.454Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

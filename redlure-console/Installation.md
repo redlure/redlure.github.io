@@ -19,3 +19,8 @@ Make changes to `config.py`:
 
 ## Default Login
 Use the username `admin` and the password `redlure` the first time you log in.
+
+## Hardware and OS
+I typically deploy the client and console on the same host. Usually running Ubuntu LTS or Debian images from Digital Ocean or Vultr. The minimum memory I'd run this server with is 2 GB. Usually the specs are around 2 GB Memory/1 CPU and 50-65 GB disk space. Usually my console/client server costs roughly $10-15 per month depending on the cloud provider.
+
+__If you run the console/client with less than 2GB memory, you are almost guaranteed to experience [issues](https://github.com/redlure/redlure-console/issues/10).__ 
