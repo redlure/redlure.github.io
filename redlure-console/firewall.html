@@ -122,7 +122,20 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="Installation.html">
+        <li class="chapter " data-level="2.1" data-path="About.html">
+            
+                <a href="About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Installation.html">
             
                 <a href="Installation.html">
             
@@ -135,7 +148,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="firewall.html">
+        <li class="chapter active" data-level="2.3" data-path="firewall.html">
             
                 <a href="firewall.html">
             
@@ -148,7 +161,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" >
+        <li class="chapter " data-level="2.4" >
             
                 <span>
             
@@ -162,7 +175,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.3.1" data-path="domains_servers.html">
+        <li class="chapter " data-level="2.4.1" data-path="domains_servers.html">
             
                 <a href="domains_servers.html">
             
@@ -175,7 +188,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.2" data-path="users_roles.html">
+        <li class="chapter " data-level="2.4.2" data-path="users_roles.html">
             
                 <a href="users_roles.html">
             
@@ -188,7 +201,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.3" data-path="workspaces.html">
+        <li class="chapter " data-level="2.4.3" data-path="workspaces.html">
             
                 <a href="workspaces.html">
             
@@ -201,7 +214,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.4" data-path="results.html">
+        <li class="chapter " data-level="2.4.4" data-path="results.html">
             
                 <a href="results.html">
             
@@ -214,7 +227,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.5" data-path="campaigns.html">
+        <li class="chapter " data-level="2.4.5" data-path="campaigns.html">
             
                 <a href="campaigns.html">
             
@@ -227,7 +240,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.6" data-path="emails.html">
+        <li class="chapter " data-level="2.4.6" data-path="emails.html">
             
                 <a href="emails.html">
             
@@ -240,7 +253,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.7" data-path="pages.html">
+        <li class="chapter " data-level="2.4.7" data-path="pages.html">
             
                 <a href="pages.html">
             
@@ -253,7 +266,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.8" data-path="target_lists.html">
+        <li class="chapter " data-level="2.4.8" data-path="target_lists.html">
             
                 <a href="target_lists.html">
             
@@ -266,7 +279,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.9" data-path="profiles.html">
+        <li class="chapter " data-level="2.4.9" data-path="profiles.html">
             
                 <a href="profiles.html">
             
@@ -291,7 +304,20 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../redlure-client/Installation.html">
+        <li class="chapter " data-level="3.1" data-path="About.html">
+            
+                <a href="About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../redlure-client/Installation.html">
             
                 <a href="../redlure-client/Installation.html">
             
@@ -408,7 +434,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="recommended-firewall-setup">Recommended Firewall Setup</h1>
+<p>The redlure-console API, redlure-client web UI and redlure-worker APIs should not be left open to the internet. These are currently running on development servers (workers spin up phishing sites with gunicorn3 instead of a dev web server). I highly recommend applying firewall rules to your redlure infrastructure so that only required traffic is allowed.</p>
+<p>On top of that, there&apos;s no reason to open these to the internet anyways :wink:</p>
+<p><em>If you are interested in the recommended firewall setup for  redlure-workers, it can be found <a href="../redlure-worker/firewall.html">here</a>.</em></p>
+<p>Basics to consider:</p>
+<ul>
+<li><strong>SSH access</strong> - you&apos;ll need to perform setup and may want to check logs. Ideally SSH access is limited to your own VPN or infrastructure.</li>
+<li><strong>Let&apos;s Encrypt</strong> - I allow traffic to 80 here so I can get Let&apos;s Encrypt certs to host redlure-client with (running on the same host as the console)</li>
+<li><strong>redlure-console communications</strong> - Both you and any of your redure-workers will need to communicate to the console over 5000 (default).</li>
+<li><strong>Access to the redlure-client</strong> - I host the client and console on the same server, so I&apos;ve also allowed access from my VPN to the client interface, 4200 by default. 443 wouldn&apos;t be ever used in this setup, so you could easily change the client to run off 443 instead of 4200.</li>
+</ul>
+<p><img src="../gitbook/images/console-firewall.png" alt=""></p>
+
                                 
                                 </section>
                             
@@ -447,7 +485,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Recommended Firewall Setup","level":"2.2","depth":1,"next":{"title":"Components","level":"2.3","depth":1,"ref":"","articles":[{"title":"Domains & Servers","level":"2.3.1","depth":2,"path":"redlure-console/domains_servers.md","ref":"redlure-console/domains_servers.md","articles":[]},{"title":"Users & Roles","level":"2.3.2","depth":2,"path":"redlure-console/users_roles.md","ref":"redlure-console/users_roles.md","articles":[]},{"title":"Workspaces","level":"2.3.3","depth":2,"path":"redlure-console/workspaces.md","ref":"redlure-console/workspaces.md","articles":[]},{"title":"Results","level":"2.3.4","depth":2,"path":"redlure-console/results.md","ref":"redlure-console/results.md","articles":[]},{"title":"Campaigns","level":"2.3.5","depth":2,"path":"redlure-console/campaigns.md","ref":"redlure-console/campaigns.md","articles":[]},{"title":"Emails","level":"2.3.6","depth":2,"path":"redlure-console/emails.md","ref":"redlure-console/emails.md","articles":[]},{"title":"Pages","level":"2.3.7","depth":2,"path":"redlure-console/pages.md","ref":"redlure-console/pages.md","articles":[]},{"title":"Target Lists","level":"2.3.8","depth":2,"path":"redlure-console/target_lists.md","ref":"redlure-console/target_lists.md","articles":[]},{"title":"Profiles","level":"2.3.9","depth":2,"path":"redlure-console/profiles.md","ref":"redlure-console/profiles.md","articles":[]}]},"previous":{"title":"Installation","level":"2.1","depth":1,"path":"redlure-console/Installation.md","ref":"redlure-console/Installation.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-console/firewall.md","mtime":"2022-01-21T19:28:26.144Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-21T21:28:01.653Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Recommended Firewall Setup","level":"2.3","depth":1,"next":{"title":"Components","level":"2.4","depth":1,"ref":"","articles":[{"title":"Domains & Servers","level":"2.4.1","depth":2,"path":"redlure-console/domains_servers.md","ref":"redlure-console/domains_servers.md","articles":[]},{"title":"Users & Roles","level":"2.4.2","depth":2,"path":"redlure-console/users_roles.md","ref":"redlure-console/users_roles.md","articles":[]},{"title":"Workspaces","level":"2.4.3","depth":2,"path":"redlure-console/workspaces.md","ref":"redlure-console/workspaces.md","articles":[]},{"title":"Results","level":"2.4.4","depth":2,"path":"redlure-console/results.md","ref":"redlure-console/results.md","articles":[]},{"title":"Campaigns","level":"2.4.5","depth":2,"path":"redlure-console/campaigns.md","ref":"redlure-console/campaigns.md","articles":[]},{"title":"Emails","level":"2.4.6","depth":2,"path":"redlure-console/emails.md","ref":"redlure-console/emails.md","articles":[]},{"title":"Pages","level":"2.4.7","depth":2,"path":"redlure-console/pages.md","ref":"redlure-console/pages.md","articles":[]},{"title":"Target Lists","level":"2.4.8","depth":2,"path":"redlure-console/target_lists.md","ref":"redlure-console/target_lists.md","articles":[]},{"title":"Profiles","level":"2.4.9","depth":2,"path":"redlure-console/profiles.md","ref":"redlure-console/profiles.md","articles":[]}]},"previous":{"title":"Installation","level":"2.2","depth":1,"path":"redlure-console/Installation.md","ref":"redlure-console/Installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-console/firewall.md","mtime":"2022-01-22T15:30:42.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T15:34:55.301Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

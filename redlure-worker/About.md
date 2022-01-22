@@ -1,5 +1,5 @@
 # The redlure-worker
-redlure-workers are desgined to be expendable phishing servers that you can build/destory engagement to engagement, or even on the fly during engagements. The workers host your actual phishing sites and communicate results back to your console, allowing the console to be central hub for all results and templates while keeping the consoles internet exposure to a minimum, increasing its longevity.
+redlure-workers are desgined to be expendable phishing servers that you can build/destory engagement to engagement, or even on the fly during engagements. The workers host your actual phishing sites and communicate results back to your console, allowing the console to be the central hub for all results and templates while keeping the console's internet exposure to a minimum, increasing its longevity.
 
 Being able to have a variable number of workers connected to a single console at any given time, allows operators the flexibility to host multiple campaigns across multiple domains, depending on needs across simultaneous engagements.
 

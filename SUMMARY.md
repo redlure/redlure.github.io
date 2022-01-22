@@ -5,6 +5,7 @@
 * [Initial Install](Initial Install.md)
 
 ### redlure-console
+* [About](redlure-console/About.md)
 * [Installation](redlure-console/Installation.md)
 * [Recommended Firewall Setup](redlure-console/firewall.md)
 * Components
@@ -19,6 +20,7 @@
     * [Profiles](redlure-console/profiles.md)
 
 ### redlure-client
+* [About](redlure-console/About.md)
 * [Installation](redlure-client/Installation.md)
 
 ### redlure-worker
