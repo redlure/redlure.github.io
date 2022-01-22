@@ -455,6 +455,31 @@
                                 
                                 <p><img src="gitbook/images/redlure.png" alt=""></p>
 <h1 id="introduction-to-redlure">Introduction to redlure</h1>
+<p>redlure is a phishing framework designed with concurrent offensive engagements in mind. redlure utilizes a distributed architecture that allows for multiple campaigns to be run on different ports and/or servers, while results are aggregated in a single interface. This allows you to generate phishing templates, target lists, start/stop campaigns, change domains, change ports and generate Let&apos;s Encrypt certs on multiple workers all from one interface. </p>
+<p>redlure was released as a part of DEFCON 28 Demo Labs. (<a href="https://www.youtube.com/watch?v=ZtCMnKHZJUM" target="_blank">Associated presentation/demo</a>) </p>
+<h1 id="features">Features</h1>
+<ul>
+<li>Manage phishing campaigns running in parallel across multiple servers, ports and domains.</li>
+<li>Chain webpage templates together for multi-step phishing (e.g. Office365, Gmail).</li>
+<li>Workspaces to manage results and templates separately for each engagement.</li>
+<li>Partial database encryption (for sensitive data, such as cleartext passwords).</li>
+<li>Generate Let&apos;s Encrypt certs remotely (other certificates can be manually specified)</li>
+<li>Manage payload delivery via automatic downloads or links and buttons</li>
+<li>Role-based authentication</li>
+</ul>
+<h1 id="the-redlure-ecosystem">The redlure Ecosystem</h1>
+<p>redlure is comprised of three components:</p>
+<ol>
+<li><strong>redlure-console</strong> - Centralized Python API that the operator interacts with. The console stores all your phishing templates and data while also aggregating your campaigns results. It manages your redlure-workers, along with their hosted phishing campaings.</li>
+<li><strong>redlure-worker</strong> - Skeletal Python API that manages the web server for hosting phishing campaigns. These are designed to be burnable and scalable. This is the only component that phishing targets interact with. Multiple redlure-workers can and should be managed from a single console.</li>
+<li><strong>redlure-client</strong> - Web interface for interacting with the console API. Written with the Angular 10 framework (Typescript and HTML).</li>
+</ol>
+<p>Below is an example of a fully setup redlure environment. Typically, I&apos;d setup 3 cloud servers for the infrastructure seen below:</p>
+<ul>
+<li>One server to host the console and client</li>
+<li>Two servers for the redlure-workers (one per worker)
+<img src="gitbook/images/diagram-v2.png" alt=""></li>
+</ul>
 
                                 
                                 </section>
@@ -494,7 +519,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Initial Install","level":"1.2","depth":1,"path":"Initial Install.md","ref":"Initial Install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2022-01-21T20:14:52.354Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T16:48:27.341Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Initial Install","level":"1.2","depth":1,"path":"Initial Install.md","ref":"Initial Install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2022-01-22T17:51:49.370Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T17:51:57.630Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
