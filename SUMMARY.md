@@ -21,7 +21,7 @@
     * [Profiles](redlure-console/profiles.md)
 
 ### redlure-client
-* [About](redlure-console/About.md)
+* [About](redlure-client/About.md)
 * [Installation](redlure-client/Installation.md)
 
 ### redlure-worker
