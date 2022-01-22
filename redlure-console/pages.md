@@ -25,9 +25,9 @@ The `{{ next_url }}` variable is used within page templates to direct visitors t
 
 # Variable (Username/Email) Passthrough
 To mimic multi-page logins that display your username on the password form page (think Office365, Google), you can use to following variables within your HTML. These __*cannot*__ be used on your first landing page in a sequence; a form with an input field named one of these values must be submitted on the prior page.
-* `{{ loginfmt }}` - Will display value from the prior page's form input where `name="loginfmt"`
-* `{{ email }}` - Will display value from the prior page's form input where `name="email"`
-* `{{ username }}` - Will display value from the prior page's form input where `name="username"`
+- {%raw%}`{{ loginfmt }}`{%endraw%} - Will display value from the prior page's form input where `name="loginfmt"`
+- {%raw%}`{{ email }}`{%endraw%} - Will display value from the prior page's form input where `name="email"`
+- {%raw%}`{{ username }}`{%endraw%} - Will display value from the prior page's form input where `name="username"`
 
 # Serving a payload
 When you configure a campaign you can optionally select a payload you've uploaded to your server/worker and set a URL path for it to be served at. A link to the payload route can be sent directly via email or it can be referenced as a variable in your HTML page template, in 1 of 2 ways:
