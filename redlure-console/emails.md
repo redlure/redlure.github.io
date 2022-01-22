@@ -3,7 +3,7 @@ The emails component is used to create HTML emails for your campaigns. redlure d
 
 ### Variables
 Variables can be used within your email templates to insert text when sent that may be unique to each recipient.
-- `{{ fname }}` - The first name of the recipient
+- {%raw%}`{{ fname }}`{%endraw%} - The first name of the recipient
 - `{{ lname }}` - The last name of the recipient
 - `{{ name }}` - First and last name of the recipient
 - `{{ email }}` - The email address of the recipient
