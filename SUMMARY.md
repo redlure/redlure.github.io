@@ -1,6 +1,6 @@
 # Summary
 
-### Overview
+### Getting Started
 * [Introduction](README.md)
 * [Initial Install](Initial Install.md)
 
@@ -8,10 +8,11 @@
 * [About](redlure-console/About.md)
 * [Installation](redlure-console/Installation.md)
 * [Recommended Firewall Setup](redlure-console/firewall.md)
-* Components
+* Core Components
+    * [Workspaces](redlure-console/workspaces.md)
     * [Domains & Servers](redlure-console/domains_servers.md)
     * [Users & Roles](redlure-console/users_roles.md)
-    * [Workspaces](redlure-console/workspaces.md)
+* Workspace Components
     * [Results](redlure-console/results.md)
     * [Campaigns](redlure-console/campaigns.md)
     * [Emails](redlure-console/emails.md)
