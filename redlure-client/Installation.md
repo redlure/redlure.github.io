@@ -21,13 +21,13 @@ By default, this will start the client on port 4200.
 
 ## Configuration
 Make changes to `config.py`
-* SSL - Toggle the use of SSL
-* CERT_PATH - set path of custom SSL cert 
-* KEY_PATH - set path of custom SSL key
-* HOST - Interface that the client will be served on
-* PORT - Port the client will be served on
+* `SSL` - Toggle the use of SSL
+* `CERT_PATH` - set path of custom SSL cert 
+* `KEY_PATH` - set path of custom SSL key
+* `HOST` - Interface that the client will be served on
+* `PORT` - Port the client will be served on
 
-If CERT_PATH and KEY_PATH are left with their default values, self-signed certs will be generated and used
+If `CERT_PATH` and `KEY_PATH` are left with their default values, self-signed certs will be generated and used
 
 ## Default Login
 Once you have setup a console and client, you can log into redlure with the username `admin` and the password `redlure`.

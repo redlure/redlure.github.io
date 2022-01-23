@@ -4,6 +4,8 @@ redlure is a phishing framework designed with concurrent offensive engagements i
 
 redlure was released as a part of DEFCON 28 Demo Labs. ([Associated presentation/demo](https://www.youtube.com/watch?v=ZtCMnKHZJUM)) 
 
+To get started, check out the [Initial Install](Initial_Install.md) page.
+
 # Features
 - Manage phishing campaigns running in parallel across multiple servers, ports and domains.
 - Chain webpage templates together for multi-step phishing (e.g. Office365, Gmail).

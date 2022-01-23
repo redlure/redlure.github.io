@@ -104,9 +104,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../Initial Install.html">
+        <li class="chapter " data-level="1.2" data-path="../Initial_Install.html">
             
-                <a href="../Initial Install.html">
+                <a href="../Initial_Install.html">
             
                     
                     Initial Install
@@ -465,12 +465,12 @@
 <h2 id="functions">Functions</h2>
 <p>The servers page offers the following functions:</p>
 <ul>
-<li>Listening ports - This checks which ports on the server are currently listening. Equivalent of running <code>netstat -ntlp</code> on the host</li>
-<li>Upload files - Upload or delete files from a resource folder (specified in the worker&apos;s config file) on the server. Payloads added here can be selected to be served during the campaign at a custom URL to be used with the <code>and</code> variables</li>
-<li>Refresh status - Checks if the server/console can communicate with the worker. Possible statuses:
+<li><strong>Listening ports</strong> - This checks which ports on the server are currently listening. Equivalent of running <code>netstat -ntlp</code> on the host</li>
+<li><strong>Upload files</strong> - Upload or delete files from a resource folder (specified in the worker&apos;s config file) on the server. Payloads added here can be selected to be served during the campaign at a custom URL to be used with the <code>and</code> variables</li>
+<li><strong>Refresh status</strong> - Checks if the server/console can communicate with the worker. Possible statuses:
   -<strong>Online</strong> - Communication with the worker is successful
   -<strong>Mismatching API Key</strong> - indicates the API key needs to be updated in the worker&apos;s config file.
-  -__Unsupported Worker Version - indicates the worker API is running a version that is not supported by your console version. Upgrade your worker to a newer supported version.</li>
+  -<strong>Unsupported Worker Version</strong> - indicates the worker API is running a version that is not supported by your console version. Upgrade your worker to a newer supported version.</li>
 </ul>
 <h2 id="api-key">API Key</h2>
 <p>The top of the servers section includes an API key. This key must be copied to the config file of each redlure-worker so that the worker and server/console can communicate. <em>If the API key is changed, all communications to/from workers will fail until workers have the config file updated with the new API key.</em></p>
@@ -479,9 +479,9 @@
 <h2 id="functions">Functions</h2>
 <p>The domains page offers the following functions:</p>
 <ul>
-<li>Edit certs - add the paths to SSL cert and key files. These locations will be checked when you configure a campaign to run using this domain with SSL</li>
-<li>Generate certs - Generate or renew SSL certificates using Let&apos;s Encrypt. This will only work if the domain resolves to an IP address of one of your servers. Certs will be generated on the worker the domain currently resolves to.</li>
-<li>Refresh DNS - Check if the IP address the domain points to has changed</li>
+<li><strong>Edit certs</strong> - add the paths to SSL cert and key files. These locations will be checked when you configure a campaign to run using this domain with SSL</li>
+<li><strong>Generate certs</strong> - Generate or renew SSL certificates using Let&apos;s Encrypt. This will only work if the domain resolves to an IP address of one of your servers. Certs will be generated on the worker the domain currently resolves to.</li>
+<li><strong>Refresh DNS</strong> - Check if the IP address the domain points to has changed</li>
 </ul>
 
                                 
@@ -526,7 +526,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Domains & Servers","level":"2.4.2","depth":2,"next":{"title":"Users & Roles","level":"2.4.3","depth":2,"path":"redlure-console/users_roles.md","ref":"redlure-console/users_roles.md","articles":[]},"previous":{"title":"Workspaces","level":"2.4.1","depth":2,"path":"redlure-console/workspaces.md","ref":"redlure-console/workspaces.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-console/domains_servers.md","mtime":"2022-01-22T15:57:09.613Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-22T18:19:55.994Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Domains & Servers","level":"2.4.2","depth":2,"next":{"title":"Users & Roles","level":"2.4.3","depth":2,"path":"redlure-console/users_roles.md","ref":"redlure-console/users_roles.md","articles":[]},"previous":{"title":"Workspaces","level":"2.4.1","depth":2,"path":"redlure-console/workspaces.md","ref":"redlure-console/workspaces.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"redlure-console/domains_servers.md","mtime":"2022-01-23T01:43:23.371Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-23T01:46:46.571Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

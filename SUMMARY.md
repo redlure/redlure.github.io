@@ -2,7 +2,7 @@
 
 ### Getting Started
 * [Introduction](README.md)
-* [Initial Install](Initial Install.md)
+* [Initial Install](Initial_Install.md)
 
 ### redlure-console
 * [About](redlure-console/About.md)

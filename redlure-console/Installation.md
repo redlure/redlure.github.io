@@ -1,7 +1,7 @@
 # Installing the redlure-console
 Requires Python3.9 and uses `pipenv` to manage dependencies. The server's functionality does not require root privileges to run but may need them to access custom SSL certs or listen on the desired port. Use the following commands to install the console:
 
-```
+```shell
 apt-get install python3.9
 pip3 install pipenv
 git clone https://github.com/redlure/redlure-console.git
