@@ -1,4 +1,4 @@
-# Recommended Firewall Setup
+# Recommended Firewall Setup (Worker)
 This is how I typically configure the firewall on redlure-workers, although it may vary depending on your use case. 
 
 *If you are interested in the recommended firewall setup for the redlure-console, it can be found [here](../redlure-console/firewall.md).*

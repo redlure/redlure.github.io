@@ -1,5 +1,5 @@
 # Installing the redlure-client
-The Redlure client is built with Angular10 and requires node package manager to install. To install the client use the following commands:
+The redlure-client is built with Angular10 and requires node package manager to install. To install the client use the following commands:
 ```shell
 git clone https://github.com/redlure/redlure-client.git
 sudo apt-get install npm
