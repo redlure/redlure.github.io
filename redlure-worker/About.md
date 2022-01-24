@@ -1,6 +1,6 @@
 # The redlure-worker
 
-[GitHub Repo](https://github.com/redlure/redlure-console)
+[GitHub Repo](https://github.com/redlure/redlure-worker)
 
 redlure-workers are desgined to be expendable phishing servers that you can build/destory engagement to engagement, or even on the fly during engagements. The workers host your actual phishing sites and communicate results back to your console, allowing the console to be the central hub for all results and templates while keeping the console's internet exposure to a minimum, increasing its longevity.
 
