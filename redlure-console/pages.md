@@ -21,7 +21,22 @@ Example:
 ```
 
 ## Chaining Templates
-The `{{ next_url }}` variable is used within page templates to direct visitors to the next phishing template in sequence.
+The `{{ next_url }}` variable is used within page templates to direct visitors to the next phishing template in sequence. You'll likely use this most with form submissions, like the above, but two other quick examples are standalone buttons or a rudimentary redirector.
+
+```html
+<html>
+    <body>
+        Loading...
+        <meta http-equiv="refresh" content="1; url={{ next_url }}">
+    </body>
+</html>
+```
+
+```html
+<form action="{{ next_url }}" method="GET">
+    <button class="submit" type="submit">Click to Enter!</button>
+</form>
+```
 
 # Variable (Username/Email) Passthrough
 To mimic multi-page logins that display your username on the password form page (think Office365, Google), you can use to following variables within your HTML. These __*cannot*__ be used on your first landing page in a sequence; a form with an input field named one of these values must be submitted on the prior page.

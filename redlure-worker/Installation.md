@@ -8,7 +8,7 @@ sudo ./install.sh
 sudo pipenv run ./redlure-worker.py
 ```
 
-The worker currently utlilzes Python3.8.
+The worker currently utlilzes Python3.9.
 
 ## Configuration
 Before you boot the worker up, you'll need to add some values to `config.py` so that the worker can communicate with your console. The two you'll need to add values for are:
