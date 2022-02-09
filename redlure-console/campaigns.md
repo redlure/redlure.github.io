@@ -27,6 +27,8 @@ Campaign creation settings are organized into three groups: server options, scen
 
 Once all settings are selected and the :arrow_right: button is clicked, redlure will verify that the domain resolves to the IP of the selected redlure-worker and (if SSL is selected) that the specified cert/key file paths exist on the redlure-worker. You will not be able to advance if either of these checks fail. redlure does not check if the chosen port is already in use on the selected worker (This can be manually checked on the `Domains & Servers` page).
 
+![](../gitbook/images/new-campaign-1.png)
+
 ## Scenario Options
 * __Name__ - Name of the campaign.
 * __Email__ - Email body template that will be sent.
@@ -36,8 +38,13 @@ Once all settings are selected and the :arrow_right: button is clicked, redlure 
 * __Payload__ - Optional setting. Select a payload previously uploaded to your worker (on `Domains & Servers` page) that can be referenced in your email and page templates.
 * __Payload URL__ - Optional setting. The trailing URL path the worker will host the selected payload on.
 
+![](../gitbook/images/new-campaign-2.png)
+
+
 ## Sending Options
 * __List__ - The target list which will receive the phishing email.
 * __Profile__ - The mail configs used to send the emails.
 * __Batch sending__ (Send _ Emails Every _ Minutes) - Optional setting. If configured, emails will be sent in groups (i.e. send 5 emails every 30 minutes). If this is left blank, the default is to send all emails at once.
 * __Start Time__ - Optional setting. Schedule the campaign to start at a future date and time. Time must be local to the console's time (shown below the currently set date/time). If left blank, the default is to schedule the campaign to run 8 seconds in the future. __Warning: This may be a little buggy.__
+
+![](../gitbook/images/new-campaign-3.png)

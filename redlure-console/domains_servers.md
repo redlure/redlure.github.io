@@ -9,9 +9,9 @@ The servers page offers the following functions:
 * __Listening ports__ - This checks which ports on the server are currently listening. Equivalent of running `netstat -ntlp` on the host
 * __Upload files__ - Upload or delete files from a resource folder (specified in the worker's config file) on the server. Payloads added here can be selected to be served during the campaign at a custom URL to be used with the `{{ payload_url }}` and `{{ serve_payload }}` variables
 * __Refresh status__ - Checks if the server/console can communicate with the worker. Possible statuses:
-    -__Online__ - Communication with the worker is successful
-    -__Mismatching API Key__ - indicates the API key needs to be updated in the worker's config file.
-    -__Unsupported Worker Version__ - indicates the worker API is running a version that is not supported by your console version. Upgrade your worker to a newer supported version.
+    * __Online__ - Communication with the worker is successful
+    * __Mismatching API Key__ - indicates the API key needs to be updated in the worker's config file.
+    * __Unsupported Worker Version__ - indicates the worker API is running a version that is not supported by your console version. Upgrade your worker to a newer supported version.
 
 
 ## API Key

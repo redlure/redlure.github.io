@@ -67,7 +67,7 @@ To drop a payload when a visitor hits your redlure page, add the `{{ serve_paylo
 ```
  When your page is rendered the variable with be replaced with:
  `<meta http-equiv="refresh" content="0; url=http[s]://yourdomain.com/custom/payload/path?id=[visitor_id]">`
-This could be done by other means, such as directly inserting the `<meta>` tag in the page template, but I've found this will usually throw WYSISYG editors for a loop when previewing your page.
+This could be done by other means, such as directly inserting the `<meta>` tag in the page template, but I've found this will usually throw WYSIWYG editors for a loop when previewing your page.
 ## Download on Action
 If you want to place your payload download behind a click using a button or hyperlink, you can use the `{{ payload_url }}` within your page template. Example:
 ```html
