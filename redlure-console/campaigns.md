@@ -16,6 +16,8 @@ Each campaign has the following functions (buttons):
 * __Kill__ (only active campaigns) - Kills the webserver process running on the redlure-worker and deletes campaign templates from disk on the worker.
 * __Delete__ - **This will delete your campaign and all associated objects (i.e. results, events, form data) from the database permanently.** If a campaign is scheduled, this will remove the job from the queue. If a campaign is currently active, it will first kill the campaign, then delete it, and remove any pending jobs from the queue (scheduled emails will not continue to send after deletion).
 
+![](../gitbook/images/campaigns.png)
+
 # Creating a New Campaign
 Campaign creation settings are organized into three groups: server options, scenario options, and sending options.
 
