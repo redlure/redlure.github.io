@@ -32,6 +32,8 @@ If `CERT_PATH` and `KEY_PATH` are left with their default values, self-signed ce
 ## Default Login
 Once you have setup a console and client, you can log into redlure with the username `admin` and the password `redlure`.
 
+*Usernames are case sensitive.*
+
 ## Hardware and OS
 I typically deploy the client and console on the same host. Usually running Ubuntu LTS or Debian images from Digital Ocean or Vultr. The minimum memory I'd run this server with is 2 GB. Usually the specs are around 2 GB Memory/1 CPU and 50-65 GB disk space. Usually my console/client server costs roughly $10-15 per month depending on the cloud provider.
 
