@@ -1,5 +1,5 @@
 # Servers
-Stand up [redlure-workers](https://github.com/redlure/redlure-worker) on separate servers and then add them to the servers page so that the server/console can communicate with them. Adding a new server requires:
+Deploy [redlure-workers](https://github.com/redlure/redlure-worker) on separate servers and then add them to the servers page so that the server/console can communicate with them. Adding a new server requires:
 * IP address of the server running the redlure-worker API
 * Alias or nickname for the server
 * Port the worker API is running on
