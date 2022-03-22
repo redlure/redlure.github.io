@@ -472,8 +472,8 @@ sudo pipenv run ./redlure-worker.py
 <p>The other config values are default, and may not require editing:</p>
 <ul>
 <li><code>CERT_PATH</code> and <code>KEY_PATH</code> - can be set to custom SSL certificates. Self-signed certs will be generated on startup otherwise.</li>
-<li><code>WORKER_PORT</code> - set the port the worker will use on startup</li>
-<li><code>SERVER_PORT</code> - set to the port your redlure-console is listening on</li>
+<li><code>WORKER_PORT</code> - set the port the worker will use on startup (default: 4445) -- Note: it must match to the port used when creating redlure-console.</li>
+<li><code>SERVER_PORT</code> - set to the port your redlure-console is listening on (default: 5000) -- Note: it must match the listening port on redlure-client and be listed in the firewall rules.</li>
 </ul>
 <h2 id="hardware-and-os">Hardware and OS</h2>
 <p>I typically deploy these on Ubuntu LTS or Debian images from Digital Ocean or Vultr. Minimum specs offered by the providers are fine in my experience. Usually this is around 1 GB Memory/1 CPU and 25 GB disk space. Never had an issue with those builds. These are dirt cheap to host, costing roughly $5 per month depending on your cloud provider.</p>
